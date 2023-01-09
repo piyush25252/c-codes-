@@ -1,0 +1,119 @@
+programs of pointers in c 
+
+#include <stdio.h>
+int main()
+{
+int a,b;
+printf("enter the two numbers to be added \n");
+scanf("%d%d",&a,&b);
+int *p=&a,*q=&b;
+printf("sum of the given two numbers is %d\n",*p+*q);
+
+    return 0;
+}
+
+program to swap two numbers by pointers 
+#include <stdio.h>
+int main()
+{
+int a,b;int *temp;
+printf("enter the two numbers to be swapped  \n");
+scanf("%d%d",&a,&b);
+int *p=&a, *q=&b;
+printf("before swapping the numbers are  %d %d\n",*p,*q);
+printf("after swapping the two numbers are \n");
+temp=p;
+p=q;
+q=temp;
+printf(" %d  %d",*p,*q);
+
+    return 0;
+}
+
+wap to input and print array elements by pointer 
+#include <stdio.h>
+void arr(int *a,int n);
+void main(){
+    int n;scanf("%d",&n);
+    int a[n];
+    for (int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }arr(a,n);
+}
+void arr(int *a, int n){
+    for(int i=0;i<n;i++){
+        printf("%d\n",a[i]+1);
+    }
+}
+
+wap to copy elements of one array to the other 
+#include<stdio.h>
+int main(){
+    int n;scanf("%d",&n);
+    int a[n],b[n];int *p1,*p2;
+  p1=a;
+    p2=b;
+    for (int i=0;i<n;i++){
+        scanf("%d",&*(p1+i));
+    }
+    for (int i=0;i<n;i++)
+    *(p2+i)=*(p1+i);
+    for (int i=0;i<n;i++)
+    printf("%d",*(p2+i));
+}
+
+c program to swap two array by pointers 
+#include <stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int a[n],b[n],*p1,*p2;
+    p1=a;p2=b;
+    for (int i=0;i<n;i++)
+    scanf("%d",&*(p1+i));
+    for (int i=0;i<n;i++)
+    scanf("%d",&*(p2+i));
+    // for (int i=0;i<n;i++)
+    // printf("%d ",*(p2+i));
+    int *temp;
+    for (int i=0;i<n;i++){
+        *temp=*(p1+i);
+        *(p1+i)=*(p2+i);
+        *(p2+i)=*temp;
+    }
+    for (int i=0;i<n;i++)
+    printf("%d ",*(p1+i));
+    printf("\n");
+    for (int i=0;i<n;i++)
+    printf("%d ",*(p2+i));
+}
+
+c program to reverse an  array using pointers 
+#include <stdio.h>
+int main(){
+    int n;
+    scanf("%d",&n);
+    int a[n],b[n],*p1,*p2;p1=a;p2=b;
+    for(int i=0;i<n;i++)
+    scanf("%d",&*(p1+i));
+    for (int i=n-1;i>=0;i--)
+    printf("%d  ",*(p1+i));
+    
+}
+
+wap to find the element from an array
+#include <stdio.h>
+int main(){
+    int n;scanf("%d",&n);int e;
+    int a[n],*p;
+    p=a;
+    for (int i=0;i<n;i++)
+    scanf("%d",&*(p+i));
+    printf("enter the element that you want to search in array\n");
+    scanf("%d",&e);
+    for (int i=0;i<n;i++){
+        if (*(p+i)==e)
+        printf("%d is present in the array at index %d",e,i);
+    }
+}
+
